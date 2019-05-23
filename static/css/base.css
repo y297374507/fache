@@ -1,0 +1,36 @@
+
+
+h1 {text-align:center;}
+h3 {text-align:center;}
+h4 {text-align:center;}
+h5 {text-align:right;}
+
+
+h2 {text-align:right;}
+
+
+
+
+
+
+table { width:100%;
+    border:1px solid gray;
+    font-size:12px}
+
+
+
+th {height:50px;
+    border:1px solid gray;
+    vertical-align:middle
+    !important;
+    font-size:16px;
+    text-align:center;
+    background-color:lightgoldenrodyellow}
+
+td {height:50px;
+    border:1px solid gray;
+    vertical-align:middle;
+    text-align:center;
+    font-size:16px;
+
+    }

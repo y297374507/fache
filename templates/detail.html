@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}发车计划详情{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="col-lg-2 panel panel-default">
+    <h4><a href="{% url 'list' %}">首页</a></h4>
+    </div></div>
+
+
+
+
+
+
+
+
+<h3>发车计划</h3>
+
+   <table>
+    <tr>
+{#    <td>发车计划编号</td>#}
+    <th>计划发车日期</th>
+    <th>到站</th>
+    <th>货物</th>
+    <th>总件数</th>
+    <th>总重量(kg)</th>
+    <th>发车客户</th>
+    </tr>
+        <tbody>
+
+        <tr>
+{#    <td>{{ fc.id }}</td>#}
+    <td>{{ fc.date }}</td>
+    <td>{{ fc.daozhan }}</td>
+    <td>{{ fc.huowu }}</td>
+    <td>{{ sumjianshu }}</td>
+    <td>{{ sumzhongliang }}</td>
+    <td>{{ fc.fachekehu }}</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <div class="row">
+    <div class="col-lg-4">
+
+
+
+
+    <h3>货物规格件数</h3>
+    <table style="width:100%">
+    <tr>
+
+    <th>规格</th>
+    <th>包装</th>
+    <th>件数</th>
+    <th>重量(kg)</th>
+
+
+{#    <th>备注</th>#}
+{#    <th>到货日期1</th>#}
+{#    <th>已到件数</th>#}
+{#    <th>存放仓位</th>#}
+{##}
+{##}
+{#    <th>到货日期2</th>#}
+{#    <th>已到件数</th>#}
+{#    <th>存放仓位</th>#}
+{##}
+{#    <th>到货日期3</th>#}
+{#    <th>已到件数</th>#}
+{#    <th>存放仓位</th>#}
+    <th>是否到齐</th>
+    <th>签名</th>
+    </tr>
+
+
+
+     {% for js in jss %}
+
+        <tbody>
+    <tr>
+    <td>{{ js.guige }}</td>
+    <td>{{ js.baozhuang }}</td>
+    <td>{{ js.jianshu }}</td>
+    <td>{{ js.zhongliang }}</td>
+
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+{#        <td></td>#}
+        <td></td>
+        <td></td>
+    </tr></tbody>
+
+    {% endfor %}
+
+        </table>
+
+ </div>
+
+
+
+
+    <div class="col-lg-8">
+
+
+    <h3>货物存放情况</h3>
+    <table style="width:100%">
+    <tr>
+    <th>盘点时间</th>
+    <th>到车(吨)</th>
+    <th>已卸(吨)</th>
+    <th>未卸(吨)</th>
+    <th>存放仓位</th>
+    <th>托板数 * 件数</th>
+    <th>散装件数</th>
+    <th>小计(件)</th>
+    <th>盘点人员</th>
+    </tr>
+        <tbody>
+
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+    </table>
+
+ </div>
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}新建发车通知{% endblock %}
+
+{% block body %}
+<br>
+    <h3><a href="{% url 'list' %}">首页</a></h3>
+<br>
+
+
+
+<form class="form-inline" method="post" action="">
+  {% csrf_token %}
+
+  <h3>{% include 'formcss.html' with form=form_fc %}</h3>
+
+<br>
+<br>
+
+
+     <div class="row">
+     <div class="col-md-5 col-lg-offset-4">
+         <p style="text-align:left;font-size:20px"> {{ form_fache }} </p>
+     </div>
+     </div>
+
+  
+    <h1><button type="submit" class="btn btn-success">确定</button></h1>
+
+
+</form>
+
+
+
+{% endblock %}

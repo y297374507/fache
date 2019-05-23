@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}发车客户表{% endblock %}
+
+{% block body %}
+<br>
+    <br>
+
+   <div class="container">
+    <div class="col-lg-6 panel panel-default">
+    <h4><a href="{% url 'list' %}">首页</a></h4>
+    </div>
+
+   <div class="col-lg-6 panel panel-default">
+    <h4><a href="{% url 'fachekehu_create' %}">新增</a></h4>
+    </div>
+
+   </div>
+
+
+    <br>
+
+    <h3>发车客户</h3>
+<br>
+    <div class="row">
+    <div class="col-md-4 col-md-push-4">
+
+    <table border="1">
+
+
+    <th>客户</th>
+    <th>修改</th>
+    <th>删除</th>
+
+        {% for object in object_list %}
+        <tbody>
+            <td><a href="{% url 'fachekehu_detail' object.id %}">{{ object.name }}</a></td>
+            <td><a href="{% url 'fachekehu_update' object.id %}">修改</a></td>
+            <td><a href="{% url 'fachekehu_delete' object.id %}">删除</a></td>
+        </tbody>
+        {% endfor %}
+
+
+    </table>
+
+    </div></div>
+
+
+{% endblock %}

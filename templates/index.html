@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %}首页{% endblock %}
+
+{% block body %}
+
+    <br>  <br>    <br>   <br>
+
+    <div class="container">
+
+
+    <div class="col-lg-2 panel panel-default">
+    <h4><a href="{% url 'daozhan_list' %}">到达车站</a></h4>
+        </div>
+
+<div class="col-lg-2 panel panel-default">
+    <h4><a href="{% url 'huowu_list' %}">货物种类</a></h4>
+</div>
+
+   <div class="col-lg-2 panel panel-default">
+  <h4><a href="{% url 'fachekehu_list' %}">发车客户</a></h4>
+        </div>
+
+        <div class="col-lg-2 panel panel-default">
+    <h4><a href="{% url 'guige_list' %}">货物规格</a></h4>
+        </div>
+
+    <div class="col-lg-2 panel panel-default">
+  <h4><a href="{% url 'baozhuang_list' %}">包装类型</a></h4>
+    </div>
+
+
+     <div class="col-lg-2 panel panel-default">
+ <h4><a href="{% url 'create' %}">新建通知</a></h4>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>发车计划表</h3>
+
+    <table>
+    <tr>
+{#    <td>编号</td>#}
+    <th>计划发车日期</th>
+    <th>到站</th>
+    <th>货物</th>
+{#    <td>总件数</td>#}
+{#    <td>总重量(kg)</td>#}
+    <th>发车客户</th>
+    <th>查看</th>
+    <th>修改</th>
+    <th>删除</th>
+    </tr>
+
+
+       {% for fc in fcs %}
+
+        <tbody>
+        <tr>
+{#    <td>{{ fc.id }}</td>#}
+    <td>{{ fc.date }}</td>
+    <td>{{ fc.daozhan }}</td>
+    <td>{{ fc.huowu }}</td>
+{#    <td>{{ sumjianshu }}</td>#}
+{#    <td>{{ sumzhongliang }}</td>#}
+    <td>{{ fc.fachekehu }}</td>
+    <td><a href="{{ fc.id }}">明细</a></td>
+    <td><a href="{{ fc.id }}/update/">修改</a></td>
+    <td><a href="{{ fc.id }}/delete/">删除</a></td>
+    </tr></tbody>
+
+    {% endfor %}
+
+    </table>
+<br>
+<br>
+<br>
+
+
+    <h4><a href="{% url 'about' %}">Contact Us</a></h4>
+
+
+
+
+{% endblock %}

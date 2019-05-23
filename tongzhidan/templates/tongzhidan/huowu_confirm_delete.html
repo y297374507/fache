@@ -1,0 +1,74 @@
+
+
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+
+        <h3 style="text-align:center;">确定删除 "{{ object }}" ?</h3>
+
+
+
+<form class="form-inline" method="post" action="">
+    <table>
+
+  {% csrf_token %}
+
+
+
+<br>
+<br>
+<br>
+
+</table>
+  
+    <h1><button type="submit" class="btn btn-success">确定</button></h1>
+
+
+</form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+
+{##}
+{##}
+{#<form method="post" action="">#}
+{#    {% csrf_token %}#}
+{##}
+{#    <h2 align="center">确定删除 "{{ object }}" ?</h2>#}
+{##}
+{#    <h2 align="center"><button type="submit">确定</button></h2>#}
+{##}
+{##}
+{#</form>#}
